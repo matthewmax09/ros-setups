@@ -202,9 +202,30 @@ If all went well you should have a ROS installation. Hook your Edison up to the 
 
 # Install Edison MRAA Libraries
 
-Follow the instructions here to install the latest swig for mraa http://swig.org/svn.html
+MRAA has Swig as one of its dependencies. Therefore, begin by installing swig.
 
-To build swig, `apt-get install bison automake autoconf build-essential g++`.
+## Install the latest swig
+
+Install all the dependencies for swig by running the following command:
+
+`apt-get install bison automake autoconf build-essential g++`
+
+1. Retrieve the latest Swig development. 
+
+`git clone https://github.com/swig/swig.git`
+
+2. To build the system, follow these steps
+
+```
+cd swig
+./autogen.sh
+./configure --prefix=/usr
+make
+make install
+```
+*Above instructions were taken from <http://swig.org/svn.html> and modified for Edision*
+
+## Install MRAA libraries
 
 Follow the instructions on https://learn.sparkfun.com/tutorials/installing-libmraa-on-ubilinux-for-edison
 
