@@ -257,6 +257,14 @@ Create a new udev rule `sudo nano /etc/udev/rules.d/edison.rules`
 Add in `KERNEL="i2c*", GROUP="dialout", MODE="660"`
 Reboot the edison for udev rules to take effect.
 
+## If still encounter permission error with I2c
+
+**example:** 'ValueError: Invalid i2c bus'
+
+run the following code 
+
+`sudo chmod 666 /dev/i2c-1`
+
 # Python Flight App
 
 Once you have a functional ROS setup you can *very carefully* perform an offboard flight using the setpoint_demo.py script. This script assumes that you have already successfully run `roslaunch mavros px4.launch`.
