@@ -261,9 +261,13 @@ Reboot the edison for udev rules to take effect.
 
 **example:** 'ValueError: Invalid i2c bus'
 
-run the following code 
+Verify that px4 has been added to group 'dialout' by running:
 
-`sudo chmod 666 /dev/i2c-1`
+`groups px4`
+
+If px4 is a member of dialout, reboot and check i2c permissions again. If still encounter permission error, run the following command to add px4 to i2c group.
+
+`sudo usermod -aG i2c px4`
 
 # Python Flight App
 
